@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: kafka-streams-yelling-app
+  cloud:
+    function:
+      definition: yell
+    stream:
+      bindings:
+        yell-in-0:
+          destination: src-topic
+        yell-out-0:
+          destination: out-topic-2
+      kafka:
+        streams:
+          binder:
+            brokers: localhost:9092
+            application-id: kafka-streams-yelling-app
+            configuration:
+              default:
+                key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+                value.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+
+
