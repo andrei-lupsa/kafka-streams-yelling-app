@@ -19,5 +19,11 @@ spring:
               default:
                 key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
                 value.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - kafkastreamstopology
 
